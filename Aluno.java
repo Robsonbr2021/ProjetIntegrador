@@ -1,13 +1,26 @@
 public class Aluno extends Pessoa {
     private String matricula;
-    private Disciplina disciplina;
     private int faltas;
+    private double nota;
+    private Disciplina disciplina;
+
 
     public Aluno() {
     }
 
-    public Aluno(String nome, String documento, Endereco endereco) {
+    public Aluno(String matricula, int faltas, double nota, Disciplina disciplina) {
+        this.matricula = matricula;
+        this.faltas = faltas;
+        this.nota = nota;
+        this.disciplina = disciplina;
+    }
+
+    public Aluno(String nome, String documento, Endereco endereco, String matricula, int faltas, double nota, Disciplina disciplina) {
         super(nome, documento, endereco);
+        this.matricula = matricula;
+        this.faltas = faltas;
+        this.nota = nota;
+        this.disciplina = disciplina;
     }
 
     public String getMatricula() {
@@ -18,14 +31,6 @@ public class Aluno extends Pessoa {
         this.matricula = matricula;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
-    }
-
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
-    }
-
     public int getFaltas() {
         return faltas;
     }
@@ -34,18 +39,34 @@ public class Aluno extends Pessoa {
         this.faltas = faltas;
     }
 
+    public double getNota() {
+        return nota;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
+
     @Override
     public String toString() {
         return "Aluno{" +
                 "matricula='" + matricula + '\'' +
-                ", disciplina=" + disciplina +
                 ", faltas=" + faltas +
+                ", nota=" + nota +
+                ", disciplina=" + disciplina +
                 ", nome='" + nome + '\'' +
                 ", documento='" + documento + '\'' +
                 ", endereco=" + endereco +
                 '}';
     }
 }
-
 
 
